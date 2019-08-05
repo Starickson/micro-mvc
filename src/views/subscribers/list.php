@@ -13,26 +13,10 @@
 
 <body>
 
-<table class="table">
-        <thead>
-            <tr>
-                <th>id de subscriber_book</th>
-                <th>Prenom Auteur</th>
-                <th>Titre livre  </th>
-            </tr>
-        </thead>
-        <tbody>
-​
-            <?php foreach ($subscribers_books as $subscriber_book) : ?>
-                <tr>
-                    <td><?= $subscriber_book['id'] ?></td>
-                    <td><?= $subscriber_book['firstname'] ?></td>
-                    <td><?= $subscriber_book['title'] ?></td>
-                </tr>
-​
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <?php foreach ($subscribers as $subscriber) : ?>
+        <?= $subscriber['firstname'] ?> <br>
+    <?php endforeach; ?>
+
 
 
     <!-- Optional JavaScript -->

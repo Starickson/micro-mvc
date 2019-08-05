@@ -43,15 +43,75 @@ spl_autoload_register('autoloadClass');
 
 
 switch ($_GET['model']) {
+
     case 'subscriber':
-        # code...
+
+    switch($_GET['method']) {
+
+        case 'list':
+            SubscriberController::list();
+            break;
+
+        case 'read':
+        SubscriberController::read( intval( $_GET['id'] ) );
+            break;
+
+        case 'new':
+        SubscriberController::new($_POST);
+            break;
+
+        case 'edit':
+        SubscriberController::edit(intval($_GET['id']));
+            break;
+
+        case 'delete':
+        SubscriberController::delete(intval ( $_GET['id'] ));
+            break;
+        case 'create':
+        SubscriberController::create();
+            break;
+        case 'confirmEdit':
+        SubscriberController::confirmEdit(intval ( $_GET['id'] ),$_POST);
+            break;        
+    }
+       
         break;
 
     case 'subscriber_book':
-        # code...
+
+    switch($_GET['method']) {
+
+        case 'list':
+        SubscriberBookController::list();
+            break;
+
+        case 'read':
+        SubscriberBookController::read( intval( $_GET['id'] ) );
+            break;
+
+        case 'new':
+        SubscriberBookController::new($_POST);
+            break;
+
+        case 'edit':
+        SubscriberBookController::edit(intval($_GET['id']));
+            break;
+
+        case 'delete':
+        SubscriberBookController::delete(intval ( $_GET['id'] ));
+            break;
+        case 'create':
+        SubscriberBookController::create();
+            break;
+        case 'confirmEdit':
+        SubscriberBookController::confirmEdit(intval ( $_GET['id'] ),$_POST);
+            break;        
+    }
+       
         break;
 
     case 'book':
+
             switch($_GET['method']) {
 
                 case 'list':
@@ -67,12 +127,18 @@ switch ($_GET['model']) {
                     break;
 
                 case 'edit':
-                    BookController::edit($_GET['id']);
+                    BookController::edit(intval($_GET['id']));
                     break;
 
                 case 'delete':
-                    BookController::delete($_GET['id']);
+                    BookController::delete(intval ( $_GET['id'] ));
                     break;
+                case 'create':
+                    BookController::create();
+                    break;
+                case 'confirmEdit':
+                    BookController::confirmEdit(intval ( $_GET['id'] ),$_POST);
+                    break;        
             }
         break;
 

@@ -10,10 +10,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-
-        <h1>Voici le livre : </h1>
-
-        <?php var_dump($book); ?>
+<form action="index.php?model=book&method=confirmEdit&id=<?= $donnees['id']?>" method='post'> 
+    Hello voici ton id : <?=$donnees['id']?> qui est en hidden
+  <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="title" aria-describedby="helpId" value="<?=$donnees['title']?>" >
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" class="form-control" placeholder="author" aria-describedby="helpId" value="<?=$donnees['author']?>">
+        <input type='hidden' name='id' value="<?= $donnees['id']?>">
+        <input type="submit" class="form-control" value="Création du livre" aria-describedby="helpId">
+    </div>
+</form>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

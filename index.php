@@ -2,6 +2,7 @@
 
 /**
  * Autoload Classes
+ * Author:Eric
  */
 
 const CLASSES_SOURCES = [
